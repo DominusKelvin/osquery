@@ -34,8 +34,6 @@ def platform():
     platform = sys.platform
     if platform.find("linux") == 0:
         platform = "linux"
-    if platform.find("freebsd") == 0:
-        platform = "freebsd"
     return platform
 
 PLATFORM = platform()
@@ -103,16 +101,11 @@ def LINUX():
 
 
 def POSIX():
-    return PLATFORM in ['linux', 'darwin', 'freebsd']
+    return PLATFORM in ['linux', 'darwin']
 
 
 def DARWIN():
     return PLATFORM in ['darwin']
-
-
-def FREEBSD():
-    return PLATFORM in ['freebsd']
-
 
 def to_camel_case(snake_case):
     """ convert a snake_case string to camelCase """
